@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("3:55");
+console.log("3:59");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
