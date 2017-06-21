@@ -4,7 +4,7 @@ var camera = new THREE.PerspectiveCamera( 75, 900/700, 0.1, 1000 );
 console.log("12:10");
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( 900, 700 );
+renderer.setSize( 800, 650 );
 document.body.appendChild( renderer.domElement );
 
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -19,6 +19,10 @@ var planeGeo = new THREE.PlaneGeometry(50, 50, 1);
 var planeMat = new THREE.MeshBasicMaterial({ color: 0xdddddd });
 var plane = new THREE.Mesh(planeGeo, planeMat);
 scene.add( plane );
+
+plane.position.x = 20;
+plane.position.y = 20;
+plane.position.z = -1;
 
 cube2.position.x = 40;
 cube3.position.y = 40;
