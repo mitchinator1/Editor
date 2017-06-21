@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 
-console.log("1:10");
+console.log("2:15");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -39,9 +39,10 @@ camera.position.z = 30;
 camera.position.x = 20;
 camera.position.y = 20;
 
-var pointLight = new THREE.PointLight(0xffffff, 1, 100);
+var pointLight = new THREE.PointLight(0xffffff, 1, 150);
 pointLight.position.set(20, 20, 30);
-scene.add( pointLight );
+var ambientLight = new THREE.AmbientLight(0xcccccc);
+scene.add( pointLight, ambientLight );
 
 var render = function () {
   
