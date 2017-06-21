@@ -1,10 +1,10 @@
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, 800/650, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, 750/650, 0.1, 1000 );
 
-console.log("12:20");
+console.log("12:49");
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( 800, 650 );
+renderer.setSize( 750, 650 );
 document.body.appendChild( renderer.domElement );
 
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
