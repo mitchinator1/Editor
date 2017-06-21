@@ -13,3 +13,14 @@ var mesh = new THREE.Mesh(geo, mat);
 var camera = new THREE.PerspectiveCamera(45, 900 / 700, 1, 1000);
 
 scene.add(mesh, camera);
+
+var render = function () {
+  'use strict';
+  
+  renderer.render(scene, mainCam);
+  
+  requestAnimationFrame(render);
+
+};
+
+render();
