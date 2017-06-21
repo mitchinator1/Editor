@@ -1,10 +1,10 @@
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, 750/650, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 
 console.log("12:57");
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( 750, 650 );
+renderer.setSize( 700, 650 );
 document.body.appendChild( renderer.domElement );
 
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -29,7 +29,7 @@ cube3.position.y = 40;
 cube4.position.x = 40;
 cube4.position.y = 40;
 
-camera.position.z = 25;
+camera.position.z = 30;
 camera.position.x = 20;
 camera.position.y = 20;
 
