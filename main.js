@@ -3,6 +3,8 @@ var canvas = document.getElementById("input");
 var ctx = canvas.getContext("2d");
 var scene = new THREE.scene(), renderer = new THREE.WebGLRenderer();
 
+console.log("11:11");
+
 renderer.setSize(900, 700);
 document.body.appendChild(renderer.domElement); 
 
