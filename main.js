@@ -14,6 +14,7 @@ var mat = new THREE.MeshLambertMaterial({ color: 0x444444 });
 var mesh = new THREE.Mesh(geo, mat);
 
 var camera = new THREE.PerspectiveCamera(45, 900 / 700, 1, 1000);
+camera.position.y = -20;
 
 var light = new THREE.AmbientLight(0x404040); 
 
