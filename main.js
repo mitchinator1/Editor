@@ -15,7 +15,9 @@ var mesh = new THREE.Mesh(geo, mat);
 
 var camera = new THREE.PerspectiveCamera(45, 900 / 700, 1, 1000);
 
-scene.add(mesh, camera);
+var light = new THREE.AmbientLight(0x404040); 
+
+scene.add(mesh, camera, light);
 
 var render = function () {
   'use strict';
