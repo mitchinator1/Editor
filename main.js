@@ -3,7 +3,7 @@ var canvas = document.getElementById("input");
 var ctx = canvas.getContext("2d");
 var scene = new THREE.Scene(), renderer = new THREE.WebGLRenderer();
 
-console.log("11:46");
+console.log("11:51");
 
 renderer.setSize(900, 700);
 document.body.appendChild(renderer.domElement); 
@@ -24,7 +24,7 @@ var plane = new THREE.Mesh( geometry, material );
 
 var light = new THREE.AmbientLight(0x404040, 100); 
 
-scene.add(mesh, camera, light, plane);
+scene.add(mesh, light, plane);
 
 var render = function () {
   'use strict';
