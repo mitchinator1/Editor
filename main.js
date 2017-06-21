@@ -1,4 +1,5 @@
-var canvas = document.getElementById("map");
+var THREE;
+var canvas = document.getElementById("input");
 var ctx = canvas.getContext("2d");
 var scene = new THREE.scene(), renderer = new THREE.WebGLRenderer();
 
@@ -17,7 +18,7 @@ scene.add(mesh, camera);
 var render = function () {
   'use strict';
   
-  renderer.render(scene, mainCam);
+  renderer.render(scene, camera);
   
   requestAnimationFrame(render);
 
