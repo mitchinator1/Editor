@@ -3,7 +3,7 @@ var canvas = document.getElementById("input");
 var ctx = canvas.getContext("2d");
 var scene = new THREE.Scene(), renderer = new THREE.WebGLRenderer();
 
-console.log("11:45");
+console.log("11:46");
 
 renderer.setSize(900, 700);
 document.body.appendChild(renderer.domElement); 
@@ -22,7 +22,7 @@ var geometry = new THREE.PlaneGeometry( 5, 20, 32 );
 var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 var plane = new THREE.Mesh( geometry, material );
 
-var light = new THREE.AmbientLight(0x404040); 
+var light = new THREE.AmbientLight(0x404040, 100); 
 
 scene.add(mesh, camera, light, plane);
 
