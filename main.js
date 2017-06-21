@@ -1,22 +1,23 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 
-console.log("2:27");
+console.log("3:52");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
 renderer.shadowMapType = THREE.PCFSoftShadowMap;
 document.body.appendChild( renderer.domElement );
 
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+var geometry1 = new THREE.BoxGeometry( 40, 1, 1 );
+var geometry2 = new THREE.BoxGeometry( 1, 40, 1);
 var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
-var cube1 = new THREE.Mesh( geometry, material );
+var cube1 = new THREE.Mesh( geometry1, material );
 cube1.castShadow = true;
-var cube2 = new THREE.Mesh( geometry, material );
+var cube2 = new THREE.Mesh( geometry2, material );
 cube2.castShadow = true;
-var cube3 = new THREE.Mesh( geometry, material );
+var cube3 = new THREE.Mesh( geometry1, material );
 cube3.castShadow = true;
-var cube4 = new THREE.Mesh( geometry, material );
+var cube4 = new THREE.Mesh( geometry2, material );
 cube4.castShadow = true;
 scene.add( cube1, cube2, cube3, cube4 );
 
@@ -35,7 +36,7 @@ cube3.position.y = 40;
 cube4.position.x = 40;
 cube4.position.y = 40;
 
-camera.position.z = 30;
+camera.position.z = 29;
 camera.position.x = 20;
 camera.position.y = 20;
 
