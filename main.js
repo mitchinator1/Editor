@@ -1,7 +1,9 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
+var canvas = document.getElementById("input");
+var ctx = canvas.getContext('2d');
 
-console.log("3:52");
+console.log("3:55");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -44,6 +46,9 @@ var pointLight = new THREE.PointLight(0xffffff, 1, 140);
 pointLight.position.set(20, 20, 30);
 var ambientLight = new THREE.AmbientLight(0x888888);
 scene.add( pointLight, ambientLight );
+
+ctx.fillStyle = "red";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var render = function () {
   
