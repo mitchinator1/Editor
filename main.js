@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("4:33");
+console.log("4:39");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -37,7 +37,7 @@ cube3.position.y = 40;
 cube4.position.x = 40;
 cube4.position.y = 40;
 
-camera.position.z = 30;
+camera.position.z = 29;
 camera.position.x = 20;
 camera.position.y = 20;
 
@@ -47,7 +47,7 @@ var ambientLight = new THREE.AmbientLight(0x888888);
 scene.add( pointLight, ambientLight );
 
 ctx.fillStyle = "red";
-ctx.fillRect(700, 0, canvas.width, canvas.height);
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var render = function () {
   
