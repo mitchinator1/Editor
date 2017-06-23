@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("5:40");
+console.log("5:57");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -55,13 +55,13 @@ var plane = new THREE.Mesh(planeGeo, planeMat);
 plane.receiveShadow = true;
 scene.add( plane );
 
-plane.position.x = 20;
-plane.position.y = 20;
+plane.position.x = 19;
+plane.position.y = 19;
 plane.position.z = -1;
 
 camera.position.z = 29;
-camera.position.x = 20;
-camera.position.y = 20;
+camera.position.x = 19;
+camera.position.y = 19;
 
 var pointLight = new THREE.PointLight(0xffffff, 1, 140);
 pointLight.position.set(20, 20, 30);
