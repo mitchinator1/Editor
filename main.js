@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("5:39");
+console.log("5:40");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -41,8 +41,8 @@ for (i = 0; i < grid.length; i += 1) {
   for (j = 0; j < grid[i].length; j += 1) {
     
     grid[i][j] = new THREE.Mesh(geometry, material);
-    grid[i][j].position.x = j
-    grid[i][j].position.y = grid.length - 1 - i;
+    grid[i][j].position.x = j * 2;
+    grid[i][j].position.y = (grid.length - 1 - i) * 2;
     
     scene.add(grid[i][j]);
     
