@@ -3,24 +3,51 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("4:39");
+console.log("5:39");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
 renderer.shadowMapType = THREE.PCFSoftShadowMap;
 document.body.appendChild( renderer.domElement );
 
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+var grid = [
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+];
+
+var geometry = new THREE.BoxGeometry(2, 2, 2);
 var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
-var cube1 = new THREE.Mesh( geometry, material );
-cube1.castShadow = true;
-var cube2 = new THREE.Mesh( geometry, material );
-cube2.castShadow = true;
-var cube3 = new THREE.Mesh( geometry, material );
-cube3.castShadow = true;
-var cube4 = new THREE.Mesh( geometry, material );
-cube4.castShadow = true;
-scene.add( cube1, cube2, cube3, cube4 );
+var i, j;
+
+for (i = 0; i < grid.length; i += 1) {
+  for (j = 0; j < grid[i].length; j += 1) {
+    
+    grid[i][j] = new THREE.Mesh(geometry, material);
+    grid[i][j].position.x = j
+    grid[i][j].position.y = grid.length - 1 - i;
+    
+    scene.add(grid[i][j]);
+    
+  }
+}
 
 var planeGeo = new THREE.PlaneGeometry(50, 50, 1);
 var planeMat = new THREE.MeshLambertMaterial({ color: 0xdddddd });
@@ -31,11 +58,6 @@ scene.add( plane );
 plane.position.x = 20;
 plane.position.y = 20;
 plane.position.z = -1;
-
-cube2.position.x = 40;
-cube3.position.y = 40;
-cube4.position.x = 40;
-cube4.position.y = 40;
 
 camera.position.z = 29;
 camera.position.x = 20;
