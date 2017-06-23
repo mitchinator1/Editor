@@ -68,7 +68,7 @@ pointLight.position.set(20, 20, 30);
 var ambientLight = new THREE.AmbientLight(0x888888);
 scene.add( pointLight, ambientLight );
 
-ctx.fillStyle = "red";
+ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var render = function () {
