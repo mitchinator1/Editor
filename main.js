@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("6:14");
+console.log("6:16");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -36,7 +36,7 @@ var grid = [
 var geometry = new THREE.BoxGeometry(2, 2, 2);
 var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
 var i, j;
-var group = new THREE.Object3D();
+var group = new THREE.Group();
 
 for (i = 0; i < grid.length; i += 1) {
   for (j = 0; j < grid[i].length; j += 1) {
