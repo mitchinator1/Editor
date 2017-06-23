@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, 700/650, 0.1, 1000 );
 var canvas = document.getElementById("input");
 var ctx = canvas.getContext('2d');
 
-console.log("5:57");
+console.log("6:14");
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( 700, 650 );
@@ -36,6 +36,7 @@ var grid = [
 var geometry = new THREE.BoxGeometry(2, 2, 2);
 var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
 var i, j;
+var group = new THREE.Object3D();
 
 for (i = 0; i < grid.length; i += 1) {
   for (j = 0; j < grid[i].length; j += 1) {
@@ -44,10 +45,13 @@ for (i = 0; i < grid.length; i += 1) {
     grid[i][j].position.x = j * 2;
     grid[i][j].position.y = (grid.length - 1 - i) * 2;
     
-    scene.add(grid[i][j]);
+    //scene.add(grid[i][j]);
+    group.add(grid[i][j]);
     
   }
 }
+
+scene.add(group);
 
 var planeGeo = new THREE.PlaneGeometry(50, 50, 1);
 var planeMat = new THREE.MeshLambertMaterial({ color: 0xdddddd });
